@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Parth 💖 - Valentine's Surprise</title>
+    <style>
+        :root {
+            --main-color: #ff6b9d;
+            --light-color: #ffeaa7;
+            --dark-color: #2d3436;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, var(--main-color), var(--light-color));
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            overflow-x: hidden;
+            color: var(--dark-color);
+        }
+
+        .container {
+            padding: 40px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: white;
+            font-size: 3rem;
+            margin-top: 30px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .message {
+            font-size: 1.2rem;
+            color: white;
+            margin: 20px;
+            line-height: 1.6;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+
+        .gift-box {
+            background: rgba(255, 255, 255, 0.9);
+            margin: 20px auto;
+            padding: 20px;
+            max-width: 400px;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .gift-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.3);
+        }
+
+        button {
+            background: linear-gradient(45deg, var(--main-color), #ff4757);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 1rem;
+            cursor: pointer;
+            margin: 10px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+        }
+
+        #surprise {
+            display: none;
+            font-size: 1.5rem;
+            color: white;
+            margin-top: 20px;
+            animation: slideIn 1s ease-out;
+        }
+
+        #secret {
+            display: none;
+            margin-top: 20px;
+            font-size: 1.2rem;
+            color: #ffd700;
+            background: rgba(0,0,0,0.5);
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        #noBtn {
+            position: relative;
+            transition: all 0.5s ease;
+        }
+
+        .heart {
+            font-size: 4rem;
+            animation: heartbeat 1.5s infinite;
+            margin-bottom: 20px;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        input[type="password"] {
+            padding: 10px;
+            border-radius: 25px;
+            border: 2px solid var(--main-color);
+            font-size: 1rem;
+            margin: 10px;
+        }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 2rem; }
+            .message { font-size: 1rem; }
+            .gift-box { max-width: 90%; }
+            button { padding: 12px 25px; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Background Music: Romantic Song -->
+    <iframe width="0" height="0" src="https://www.youtube.com/embed/rwA4N8pj1XA?start=61&autoplay=1&loop=1&playlist=rwA4N8pj1XA&mute=1&controls=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+    <div class="container">
+        <div class="heart">💖</div>
+
+        <h1>For My Dearest Parth</h1>
+
+        <p class="message">
+            In every color of the sky, I find a memory of you.<br>
+            In every song, a quiet echo of your name.<br>
+            You are my favorite story, told again and again.
+        </p>
+
+        <div class="gift-box">
+            <h3>🌹 A Little Promise</h3>
+            <p>To stand beside you in every season of life.</p>
+        </div>
+
+        <div class="gift-box">
+            <h3>🌟 A Gentle Wish</h3>
+            <p>That every dream of yours finds a safe sky.</p>
+        </div>
+
+        <div class="gift-box">
+            <h3>💕 A Forever Truth</h3>
+            <p>No matter where life goes, my heart chooses you.</p>
+        </div>
+
+        <button onclick="showLove()">Open My Heart</button>
+
+        <div id="surprise">
+            <h2>Parth, Will You Be My Valentine? 💌</h2>
+
+            <button onclick="yesAnswer()">Yes 💖</button>
+            <button id="noBtn" onmouseover="runAway()">No 😏</button>
+
+            <p id="finalMessage" style="display:none; font-size: 1.3rem; margin-top: 20px;">
+                I knew your heart would say yes!<br>
+                Happy Valentine’s Day, my love! 💞<br>
+                <span style="font-size: 2rem;">❤️</span>
+            </p>
+
+            <div style="margin-top: 40px;">
+                <h3>🔒 Unlock a Secret Message</h3>
+                <input type="password" id="pass" placeholder="Enter our secret word">
+                <button onclick="unlockSecret()">Unlock</button>
+
+                <p id="secret">
+                    Parth, this message is only for you:<br>
+                    No matter how many tomorrows come,<br>
+                    my heart will always choose yours first. 💖<br>
+                    Forever yours, [Your Name]
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showLove() {
+            document.getElementById("surprise").style.display = "block";
+            // Optional: Scroll to the surprise section
+            document.getElementById("surprise").scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function yesAnswer() {
+            document.getElementById("finalMessage").style.display = "block";
+            // Add confetti or animation here if desired
+        }
+
+        function runAway() {
+            const btn = document.getElementById("noBtn");
+            const container = document.querySelector(".container");
+            const containerRect = container.getBoundingClientRect();
+            const btnRect = btn.getBoundingClientRect();
+
+            // Random position within container
+            const maxX = containerRect.width - btnRect.width - 20;
+            const maxY = containerRect.height - btnRect.height - 100;
+
+            const randomX = Math.random() * maxX;
+            const randomY = Math.random() * maxY;
+
+            btn.style.position = "absolute";
+            btn.style.left = randomX + "px";
+            btn.style.top = randomY + "px";
+            btn.style.transform = "rotate(" + (Math.random() * 360) + "deg)";
+        }
+
+        function unlockSecret() {
+            const password = document.getElementById("pass").value.toLowerCase();
+            if (password === "parthlove") {
+                document.getElementById("secret").style.display = "block";
+            } else {
+                alert("Not the right secret word, my dear! Try again 💕");
+            }
+        }
+    </script>
+</body>
+</html>
